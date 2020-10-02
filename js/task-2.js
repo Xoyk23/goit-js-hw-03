@@ -1,27 +1,17 @@
-const calculateEngravingPrice = (message = ' ', pricePerWord = 0) => {
-  return (pricePerWord = message.split(' ').length * pricePerWord);
+/* Подсчет количества свойств в объекте
+Напиши функцию countProps(obj), которая возвращает число - количество свойств в объекте.
+
+Циклы не должны использоваться */
+
+const countProps = function (obj) {
+  // 1.Написать метод обьекта который преабразует обьект в массив
+  const key = Object.keys(obj);
+  // 2. Подсчитать длину масива
+  return key.length;
 };
 
-console.log(
-  calculateEngravingPrice(
-    'Proin sociis natoque et magnis parturient montes mus',
-    10,
-  ),
-); // 80
+console.log(countProps({})); // 0
 
-console.log(
-  calculateEngravingPrice(
-    'Proin sociis natoque et magnis parturient montes mus',
-    20,
-  ),
-); // 160
+console.log(countProps({ a: 1, b: 1 })); // 2
 
-console.log(
-  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 40),
-); // 240
-
-console.log(
-  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20),
-); // 120
-
-console.log(calculateEngravingPrice('Uno', 100)); // 100
+console.log(countProps({ a: 1, b: 1, c: 1, d: 1, e: 1 })); // 5
