@@ -1,26 +1,34 @@
-const getItemsString = function (array = ' ') {
-  let totalResults = '';
+/* Напиши скрипт, который, для объекта user, последовательно:
 
-  for (let i = 0; i < array.length; i += 1) {
-    const item = array[i];
-    const number = [i + 1];
 
-    const result = `${number} - ${item}\n`;
-    totalResults += result;
-  }
+1.добавляет поле 'mood' со значением 'happy'
+2.добавляет поле 'full time' со значением true
+3.заменяет значение 'hobby' на 'skydiving'
+4.заменяет значение 'premium' на false
+5.в переменную message записывает содержимое объекта user:
+-для переменной keys присваивает массив свойств объекта, используя метод Object.keys()
+-с помощью оператора for...of
+-в формате ключ:значение
+-c переносом строки ('\n') */
 
-  return totalResults;
+let message = '';
+const user = {
+  age: 20,
+  hobby: 'html',
+  name: 'Mango',
+  premium: true,
+  mood: 'happy',
+  'full time': true,
 };
 
-console.log(getItemsString(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']));
+user.hobby = 'skydiving';
+// console.log(user);
+user.premium = false;
+// console.log(user.premium);
 
-/*Использование for
-* Напиши функцию getItemsString(array), которая получает массив и возвращает строку, полученную из объединения (конкатенации) строк в формате ${номер элемента} - ${значение элемента}\n , где \n - спецсимвол переноса.
+const keys = Object.keys(user);
+for (const key of keys) {
+  message += `${key}: ${user[key]}\n`;
+}
 
-* Нумерация должна начинаться с 1. К примеру для первого элемента массива ['Mango', 'Poly', 'Ajax'] с индексом 0 будет выведено '1 - Mango', а для индекса 2 выведет '3 - Ajax'.
-
-* Используйте вспомогательную переменную result для добавления (конкатенации) строк внутри цикла for */
-
-// 1. Создать аккумулятор
-// 2. Перебрать Массив
-// 3. Обьеденить массив с строкой
+console.log(message);
