@@ -10,7 +10,7 @@ function calculateTotalPrice(array, prop) {
   let totalPrice = 0;
   // 2. Перебрать массив
   for (const object of array) {
-    console.log(object);
+    // console.log(object);
     // 3.Если имя обьекта в массиве совпадает с именем аргумента то делаем вычесление (цена умноженая на количество)
     if (object.name === prop) {
       totalPrice += object.price * object.quantity;
